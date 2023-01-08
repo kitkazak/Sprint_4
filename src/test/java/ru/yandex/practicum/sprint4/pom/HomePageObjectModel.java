@@ -16,16 +16,15 @@ public class HomePageObjectModel {
     // Locators
     By rccConfirmButton = By.id("rcc-confirm-button");
     By orderButtons = By.xpath(".//button[text()='Заказать']");
-//    By accordionContainer = By.xpath(".//div[@class='accordion']");
     By accordionItems = By.xpath(".//div[@class='accordion__item']");
 
     public void clickRccConfirmButton() {
         driver.findElement(rccConfirmButton).click();
     }
 
-//    public void clickOrderButton(int index) {
-//        driver.findElements(orderButtons).get(index).click();
-//    }
+    public void clickOrderButton(int index) {
+        driver.findElements(orderButtons).get(index).click();
+    }
 
     public void clickAccordionItem(int index) {
         driver.findElements(accordionItems).get(index).click();
@@ -46,6 +45,7 @@ public class HomePageObjectModel {
         assertTrue(accordionItemText.equals(expectedText));
     }
 
+    // Step
     public void checkAccordionItemOpensAndShowsExpectedText(int index, String expectedText) {
         clickAccordionItem(index);
         checkAccordionItemPanelDisplayed(index);

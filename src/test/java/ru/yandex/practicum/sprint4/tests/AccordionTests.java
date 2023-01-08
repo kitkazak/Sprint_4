@@ -8,6 +8,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import ru.yandex.practicum.sprint4.pom.HomePageObjectModel;
 
@@ -51,12 +52,14 @@ public class AccordionTests {
 
     @BeforeClass
     public static void setupClass() {
-        WebDriverManager.firefoxdriver().setup();
+        // WebDriverManager.firefoxdriver().setup();
+        WebDriverManager.chromedriver().setup();
     }
 
     @Before
     public void setupTest() {
-        driver = new FirefoxDriver();
+        // driver = new FirefoxDriver();
+        driver = new ChromeDriver();
     }
 
     @After
